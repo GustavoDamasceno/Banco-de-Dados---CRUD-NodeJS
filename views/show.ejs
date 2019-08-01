@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My CRUD in NodeJS</title>
+  <style>
+     body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: url(https://www.wallpaperup.com/uploads/wallpapers/2012/09/22/15991/1bc49bcd7b4d4d6ee6d405f46c8087de.jpg) repeat;
+        background-size: cover;
+      }
+
+     button.css3button {
+        background: #009879;
+        background-image: -webkit-linear-gradient(top, #009879, #009879);
+        background-image: -moz-linear-gradient(top, #009879, #009879);
+        background-image: -ms-linear-gradient(top, #009879, #009879);
+        background-image: -o-linear-gradient(top, #009879, #009879);
+        background-image: linear-gradient(to bottom, #009879, #009879);
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        font-family: Arial;
+        color: #FFFF;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        }
+    
+     button.css3button:hover {
+        background: #009879;
+        background-image: -webkit-linear-gradient(top, #009879, #009879);
+        background-image: -moz-linear-gradient(top, #009879, #009879);
+        background-image: -ms-linear-gradient(top, #009879, #009879);
+        background-image: -o-linear-gradient(top, #009879, #009879);
+        background-image: linear-gradient(to bottom, #009879, #009879);
+        text-decoration: none;
+      }
+
+      h1{
+        font-weight: bold;
+        text-align: center;
+        color: #009879;
+      }
+      .content-table{
+          width: 880px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          border-collapse: collapse;
+          margin: 25px 0;
+          font-size: 0.9cm;
+          min-width: 400px;
+          border-radius: 5px 5px 0 0;
+          overflow: hidden;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .content-table thead tr{
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+          font-weight: bold;  
+      }
+
+      .content-table th,
+      .content-table td {
+          padding: 12px 15px;
+      }
+
+      .content-table tbody tr{
+          border-bottom: 1px solid #dddddd;
+      }
+
+      .content-table tbody tr:nth-of-type(even){
+          background-color: #f3f3f3;
+      }
+
+      .content-table tbody tr:last-of-type{
+          border-bottom: 2px solid #009879;
+      }
+
+      .content-table tbody tr.active-row{
+          font-weight: bold;
+          color: #009879;
+      }
+
+  </style>
+
+</head>
+<body>
+
+<h1>Banco de Dados<h1>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Password</td>
+                <td>Ação</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% data.forEach(function(details) { %>
+            <tr class="active-row">
+                <td><%= details.name %></td>
+                <td><%= details.password %></td>
+                <td><a href="/edit/<%= details._id %>">Editar</a> - <a href="/delete/<%= details._id %>">Deletar</a></td>
+            </tr>
+            <% }) %>
+        </tbody>
+        <button type="button" name="" value="" class="css3button"><a href="/"> Voltar </a></button>
+</body>
+</html>
