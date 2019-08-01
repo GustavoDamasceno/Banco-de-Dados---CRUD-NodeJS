@@ -636,7 +636,7 @@ Note que incluí os buttons no arquivo show.ejs onde irá direcionar para a pág
 
 ```
 
-Então antes de avançar vamos ver como está ficando o nosso projeto! Quando você abrir o navegador em localhost:3000 iraá visualizar o seguinte:
+Então antes de avançar vamos ver como está ficando o nosso projeto! Quando você abrir o navegador em localhost:3000 irá visualizar o seguinte:
 
 ![](https://pbs.twimg.com/media/EA3ELiWXsAAh7sE?format=jpg&name=large)
 
